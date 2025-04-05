@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://leejione.netlify.app/ -->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta htp-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta property="og:type" content="website">
+
+
+
+    <!-- 박스 내용 개발 -->
+    <meta property="og:title" content="정부24">
+    <meta property="og:image" content="mobile_icon_!.ico">
+
+
+
+
+    <link rel="apple-touch-icon" href="https://leejione.netlify.app/mobile_icon.ico">
+    <link rel="shortcut icon" href="https://leejione.netlify.app/mobile_icon.ico">
+    <link rel="stylesheet" href="./정부24_files/junglesystem.css">
+    <link rel="stylesheet" href="./정부24_files/font_SJSejongGothic.css">
+    <link rel="stylesheet" href="./정부24_files/main.css">
+    <script src="./정부24_files/jquery-3.6.0.slim.js"></script>
+
+    <title>정부24</title>
+
+    <script type="text/javascript">
+        document.onmousedown = click;
+        // F12 버튼 방지
+        $(document).ready(function() {
+            $(document).bind('keydown', function(e) {
+                if (e.keyCode) {
+                    alert("접근 불가능");
+                    e.preventDefault();
+                    e.returnValue = false;
+                }
+            });
+        });
+
+        // 우측 클릭 방지
+        document.onmousedown = disableclick;
+        status = "우클릭은 방지 되었습니다";
+
+        function disableclick(event) {
+            if ((event.button == 2) || (event.button == 3)) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <link type="text/css" rel="stylesheet" href="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/css/mcafee_fonts.css">
+</head>
+
+
+
+<body style="overflow: auto;">
+    <script>
+        function showLoadingScreen() {
+            const loadingScreen = document.createElement('div');
+            loadingScreen.style.position = 'fixed';
+            loadingScreen.style.top = '0';
+            loadingScreen.style.left = '0';
+            loadingScreen.style.width = '100%';
+            loadingScreen.style.height = '100%';
+            loadingScreen.style.backgroundColor = 'white';
+            loadingScreen.style.display = 'flex';
+            loadingScreen.style.justifyContent = 'center';
+            loadingScreen.style.alignItems = 'center';
+            loadingScreen.style.zIndex = '9999';
+
+            const loadingImage = document.createElement('img');
+            loadingImage.src = 'mobile_icon.png';
+            loadingImage.style.width = '100px';
+
+            loadingScreen.appendChild(loadingImage);
+            document.body.appendChild(loadingScreen);
+
+            setTimeout(function() {
+                const loadingScreen = document.querySelector('div');
+                loadingScreen.style.display = 'none';
+
+                document.body.style.overflow = 'auto';
+            }, 2000);
+        }
+
+        showLoadingScreen();
+
+        document.body.style.overflow = 'hidden';
+    </script>
+    <div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background-color: white; display: none; justify-content: center; align-items: center; z-index: 9999;"><img src="./정부24_files/mobile_icon.png" style="width: 100px;"></div>
+    <div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background-color: white; display: none; justify-content: center; align-items: center; z-index: 9999;"><img src="./정부24_files/mobile_icon.png" style="width: 100px;"></div>
+
+
+    <div class="header">
+        <img src="./정부24_files/icon.png">
+        <h2>
+            <p>주민등록증모바일확인서비스</p>
+            <p></p>
+            <p></p>
+        </h2>
+        <div class="header_list">
+            <bd>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
+                </svg>
+            </bd>
+        </div>
+    </div>
+
+
+
+    <hr color="#ddeaf3">
+    <div id="wrap" class="">
+        <div id="box" class="box_main" style="display: block;">
+            <img src="./정부24_files/KakaoTalk_20250320_230010577.jpg">
+            <br>
+            <br>
+
+
+
+
+            <!-- 박스 내용 개발 -->
+            <h1>국예린</h1>
+            <h2 style="margin-left: 27px;">05.08.13</h2>
+            <h3>광주광역시 북구</h3>
+            <div class="QR_Code">
+                <img id="QR_img" src="./정부24_files/saved_resource">
+            </div>
+
+
+
+
+
+            <progress value="4" max="30" id="jb"></progress>
+
+            <p class="progressbar_text">남은시간</p>
+            <p class="progressbar_time">4초</p>
+
+            <p class="QR_text">QR코드를 리더기에 스캔하세요</p>
+
+            <div class="box_footer">
+                <p class="js-click-modal">상세정보 표시</p>
+            </div>
+        </div>
+
+        <div class="modal" style="display: none;">
+            <div id="box">
+
+
+
+
+
+                <!-- 박스 내용 개발 -->
+                <img src="./정부24_files/KakaoTalk_20250320_230010577.jpg">
+
+                <h1>국예린</h1>
+                <h2> 050813-4661014</h2>
+                <h3>광주광역시 북구 일곡동 현대 1차 106동309호 <br></h3>
+
+                <h4 style="margin-left: 42%">2024.06.04</h4>
+                <h5 style="margin-left: 36%;">광주광역시장</h5>
+
+
+
+
+            </div>
+
+            <div class="back" style="align-items:center; display: flex; justify-content:center;">
+                <bd><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"></path>
+                </svg></bd>
+            </div>
+        </div>
+
+        <div id="footer">
+            <marquee>
+                <p>캡쳐방지 시스템이 작동 중입니다. 캡쳐방지 시스템이 작동 중입니다. 캡쳐방지 시스템이 작동 중입니다. 캡쳐방지 시스템이 작동 중입니다. 캡쳐방지 시스템이 작동 중입니다. 캡쳐방지 시스템이 작동 중입니다. 캡쳐방지 시스템이 작동 중입니다. 캡쳐방지 시스템이 작동 중입니다. 캡쳐방지 시스템이 작동 중입니다. 캡쳐방지 시스템이 작동 중입니다. 캡쳐방지 시스템이 작동 중입니다.</p>
+            </marquee>
+        </div>
+    </div>
+
+    <script src="./정부24_files/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+    <script type="text/javascript" language="javascript">
+        // 모바일 웹 주소창 숨기기
+        window.addEventListener('load', function() {}, false);
+    </script>
+    <script>
+        $(document).ready(function() {
+            $(".js-click-modal").click(function() {
+                document.querySelector('.box_main').style.display = 'none';
+                document.querySelector('.modal').style.display = 'block';
+            });
+
+            $(".back").click(function() {
+                document.querySelector('.box_main').style.display = 'block';
+                document.querySelector('.modal').style.display = 'none';
+            });
+
+            let count = 30
+            setInterval(() => {
+                document.querySelector('.progressbar_time').innerHTML = `${count}초`
+                document.querySelector('#jb').value = count
+                if (count <= 0) {
+                    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+                    let result = '';
+                    const charactersLength = characters.length;
+                    for (let i = 0; i < 54; i++) {
+                        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+                    }
+                    document.querySelector('#QR_img').src = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${result}`
+                    count = 30
+                }
+                count -= 1
+            }, 1000)
+        })
+
+        document.documentElement.addEventListener('touchstart', function(event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        }, false);
+
+        var lastTouchEnd = 0;
+
+        document.documentElement.addEventListener('touchend', function(event) {
+            var now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+    </script>
+
+    <span id="PING_CONTENT_DLS_POPUP" style="display: none;"></span>
+    <div style="background-color: transparent; border: none; bottom: 15px; display: block; margin: 0px; opacity: 1; padding: 0px; position: fixed; right: 15px; z-index: 2147483647;"><template shadowrootmode="closed"><style>/*!
+ * 
+ *     MCAFEE RESTRICTED CONFIDENTIAL
+ *     Copyright (c) 2025 McAfee, LLC
+ *
+ *     The source code contained or described herein and all documents related
+ *     to the source code ("Material") are owned by McAfee or its
+ *     suppliers or licensors. Title to the Material remains with McAfee
+ *     or its suppliers and licensors. The Material contains trade
+ *     secrets and proprietary and confidential information of McAfee or its
+ *     suppliers and licensors. The Material is protected by worldwide copyright
+ *     and trade secret laws and treaty provisions. No part of the Material may
+ *     be used, copied, reproduced, modified, published, uploaded, posted,
+ *     transmitted, distributed, or disclosed in any way without McAfee's prior
+ *     express written permission.
+ *
+ *     No license under any patent, copyright, trade secret or other intellectual
+ *     property right is granted to or conferred upon you by disclosure or
+ *     delivery of the Materials, either expressly, by implication, inducement,
+ *     estoppel or otherwise. Any license under such intellectual property rights
+ *     must be expressed and approved by McAfee in writing.
+ *
+ */
+@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-Thin.ttf") format("truetype");font-weight:100;font-style:normal}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-ThinItalic.ttf") format("truetype");font-weight:100;font-style:italic}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-ExtraLight.ttf") format("truetype");font-weight:200;font-style:normal}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-ExtraLightItalic.ttf") format("truetype");font-weight:200;font-style:italic}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-Light.ttf") format("truetype");font-weight:300;font-style:normal}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-LightItalic.ttf") format("truetype");font-weight:300;font-style:italic}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-Regular.ttf") format("truetype");font-weight:400;font-style:normal}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-Italic.ttf") format("truetype");font-weight:400;font-style:italic}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-Medium.ttf") format("truetype");font-weight:500;font-style:normal}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-MediumItalic.ttf") format("truetype");font-weight:500;font-style:italic}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-SemiBold.ttf") format("truetype");font-weight:600;font-style:normal}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-SemiBoldItalic.ttf") format("truetype");font-weight:600;font-style:italic}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-Bold.ttf") format("truetype");font-weight:700;font-style:normal}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-BoldItalic.ttf") format("truetype");font-weight:700;font-style:italic}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-ExtraBold.ttf") format("truetype");font-weight:800;font-style:normal}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-ExtraBoldItalic.ttf") format("truetype");font-weight:800;font-style:italic}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-Black.ttf") format("truetype");font-weight:900;font-style:normal}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-BlackItalic.ttf") format("truetype");font-weight:900;font-style:italic}*{border:0;box-sizing:border-box;font:inherit;font-family:"McAfeePoppins",Helvetica,Arial;font-size:100%;margin:0;padding:0;vertical-align:baseline;outline:none}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}html,body{background-color:#f5f6fa;font-family:"McAfeePoppins",Helvetica,Arial;line-height:1;height:100%;width:100%}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:"";content:none}table{border-collapse:collapse;border-spacing:0}b{font-weight:bold}img{display:block}.dls__container{align-items:center;display:flex;margin:0 auto;margin-top:50px;position:relative}.dls__popup__expanded{align-items:center;overflow:hidden;border-radius:100px;cursor:pointer;display:flex;left:0;padding:15px;position:absolute;height:95px;width:383px;background-color:#fff;transition:all .3s ease-in-out}.dls__popup__expanded .dls__icon{height:65px;width:73px}.content{margin-left:12px}.content .content__images{display:flex;align-items:center;width:250px}.content .content__images .seperator__line{margin-left:5px;margin-right:10px}.content .content__images #dls_close_icon{cursor:pointer;margin-left:auto;margin-right:0px}.content p{font-family:"McAfeePoppins",Helvetica,Arial;font-weight:"400";font-size:14px;line-height:20px;margin-top:8px;color:#4258ff;width:250px;cursor:pointer}.shield{overflow:hidden;box-shadow:0px 2px 4px 0px rgba(33,41,52,.12),0px -1px 2px 0px rgba(0,0,0,.08);align-items:center;border-radius:100px;bottom:0;display:flex;height:95px;justify-content:center;position:absolute;right:0;width:383px;transition:all .3s ease-in-out}.shield__circle{display:flex;justify-content:center;align-items:center;width:55px;height:55px;background-color:#c01818;transition:all .6s ease-in-out .2s;z-index:1;opacity:0}
+
+/*# sourceMappingURL=../sourceMap/chrome/css/download_scan_popup.css.map*/</style><div class="dls__container">
+  <div class="shield" style="background: transparent; opacity: 0.1; display: none;">
+    <div class="shield__circle" style="opacity: 1;">
+      <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/mcafee_logo_white.svg?secret=iu3ht7" x-mcsrc="" id="dls_ballon_icon" x-mcsrcparsed="true">
+    </div>
+    <div class="dls__popup__expanded" style="opacity: 0;">
+      <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/download_scan_icon.svg?secret=iu3ht7" x-mcsrc="" class="dls__icon" x-mcsrcparsed="true">
+      <div class="content">
+        <div class="content__images">
+          <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/mcafee_logo_red.svg?secret=iu3ht7" x-mcsrc="" id="dls_mcafee_logo" x-mcsrcparsed="true">
+          <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/seperator_line.svg?secret=iu3ht7" x-mcsrc="" class="seperator__line" x-mcsrcparsed="true">
+          <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/webadvisor.svg?secret=iu3ht7" x-mcsrc="" x-mcsrcparsed="true">
+          <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/close-outline.svg?secret=iu3ht7" x-mcsrc="" id="dls_close_icon" x-mcsrcparsed="true">
+        </div>
+        <p id="download_scan_popup_expanded_descriptions">다운로드 항목을 검사 중입니다. 문제가 있는 경우 알려드리겠습니다.</p>
+      </div>
+    </div>
+  </div>
+</div><style>/*!
+ * 
+ *     MCAFEE RESTRICTED CONFIDENTIAL
+ *     Copyright (c) 2025 McAfee, LLC
+ *
+ *     The source code contained or described herein and all documents related
+ *     to the source code ("Material") are owned by McAfee or its
+ *     suppliers or licensors. Title to the Material remains with McAfee
+ *     or its suppliers and licensors. The Material contains trade
+ *     secrets and proprietary and confidential information of McAfee or its
+ *     suppliers and licensors. The Material is protected by worldwide copyright
+ *     and trade secret laws and treaty provisions. No part of the Material may
+ *     be used, copied, reproduced, modified, published, uploaded, posted,
+ *     transmitted, distributed, or disclosed in any way without McAfee's prior
+ *     express written permission.
+ *
+ *     No license under any patent, copyright, trade secret or other intellectual
+ *     property right is granted to or conferred upon you by disclosure or
+ *     delivery of the Materials, either expressly, by implication, inducement,
+ *     estoppel or otherwise. Any license under such intellectual property rights
+ *     must be expressed and approved by McAfee in writing.
+ *
+ */
+.mc-interactive-balloon{position:absolute;right:-50px;bottom:8px;box-shadow:rgba(0,0,0,.12) 0px 0px 10px;height:40px;width:40px;background:#1671ee;border-radius:20px;display:flex;justify-content:center;align-items:center}
+
+/*# sourceMappingURL=../sourceMap/chrome/css/interactive_balloon.css.map*/</style></template></div>
+</body>
+
+</html>
